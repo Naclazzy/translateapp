@@ -23,7 +23,7 @@ function App() {
       .request(options)
       .then(function (response) {
         console.log(response.data);
-        Object.keys(response.data.data)
+        const arrayOfData = Object.keys(response.data.data).map(key => response.data.data[key])
         setLanguages(response.data);
       })
       .catch(function (error) {
