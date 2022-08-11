@@ -11,6 +11,8 @@ function App() {
   const [outputLanguage, setOutputLanguage] = useState("English");
   const [languages, setLanguages] = useState(null);
 
+
+
   const getLanguages = () => {
     const axios = require("axios");
 
@@ -64,7 +66,11 @@ function App() {
           />
         </>
       )}
-      {showModal && <Modal setShowModal={setShowModal} />}
+      {showModal && 
+      <Modal 
+      setShowModal={setShowModal}
+      languages={languages} 
+       />}
     </div>
   );
 }
